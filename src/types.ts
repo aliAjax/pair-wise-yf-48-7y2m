@@ -27,6 +27,23 @@ export interface ScoreRecord {
   submitted: boolean;
   conflict: boolean;
   updatedAt: string;
+  version: number;
+  confirmedWeightVersion: number;
+  localDraft?: boolean;
+}
+
+export interface PendingSave {
+  id: string;
+  schemeId: string;
+  judge: Viewer;
+  values: Record<string, number>;
+  comment: string;
+  conflict: boolean;
+  submitted: boolean;
+  attempts: number;
+  createdAt: string;
+  lastAttemptAt: string;
+  error?: string;
 }
 
 export interface ReviewEvent {
